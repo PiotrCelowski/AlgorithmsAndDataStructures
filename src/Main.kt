@@ -2,14 +2,8 @@ import LinkedList.LinkedList
 import LinkedList.Node
 
 fun main() {
-    val list = LinkedList<Int>()
-    list.push(3)
-    list.push(2)
-    list.push(1)
-    println("Before inserting: $list")
-    var middleNode = list.nodeAt(1)!!
-    for (i in 1..3) {
-        middleNode = list.insert(-1 * i, middleNode)
-    }
-    println("After inserting: $list")
+    val unsortedList = arrayListOf<Int>(5,224,1,48,33333,2)
+    val sorter = Sorter()
+    val sortedList = sorter.insertionSort(unsortedList)
+    println(sortedList)
 }

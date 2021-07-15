@@ -83,6 +83,26 @@ class Sorter {
         return quickSort(leftArray) + equals + quickSort(rightArray)
     }
 
+    fun insertionSort(inputArray: ArrayList<Int>): ArrayList<Int> {
+        for(currentIndex in 1 until inputArray.size) {
+            val currentElement = inputArray[currentIndex]
+            for(previousIndex in currentIndex-1 downTo 0) {
+                val previousElement = inputArray[previousIndex]
+                if(previousElement > currentElement) {
+                    movePreviousElement(inputArray, previousIndex)
+                    inputArray[previousIndex] = currentElement
+                }
+            }
+        }
+        return inputArray
+    }
+
+    private fun movePreviousElement(inputArray: ArrayList<Int>, previousIndex: Int) {
+        val elementToMove = inputArray[previousIndex]
+        val insertIndex = previousIndex+1
+        inputArray[insertIndex] = elementToMove
+    }
+
     private fun isSorted(inputArray: ArrayList<Int>): Boolean {
         for (index in 0 until inputArray.size - 1) {
             if (inputArray[index] > inputArray[index + 1]) {
