@@ -1,9 +1,8 @@
-import LinkedList.LinkedList
-import LinkedList.Node
+import myHashTable.MyHashTable
 
 fun main() {
-    val unsortedList = arrayListOf<Int>(5,224,1,48,33333,2)
-    val sorter = Sorter()
-    val sortedList = sorter.insertionSort(unsortedList)
-    println(sortedList)
+    val myHashTable = MyHashTable()
+
+    myHashTable.set("grapes", 1000)
+    println(myHashTable.generateHash("abcd"))
 }
